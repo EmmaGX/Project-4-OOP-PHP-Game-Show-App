@@ -5,8 +5,8 @@
     include 'inc/Game.php';
     include 'inc/Phrase.php';
 
-    $phrase = new Phrase($currentPhrase, $lives);
-    $game = new Game();
+    $phrase = new Phrase($currentPhrase, $selected);
+    $game = new Game($phrase);
     ?>
     <meta charset="utf-8">
     <title>Phrase Hunter</title>

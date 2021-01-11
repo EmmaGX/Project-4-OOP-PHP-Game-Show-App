@@ -1,11 +1,11 @@
 <?php
 
-class Phrase extends Game
+class Phrase
 {
-    private $currentPhrase = 'dream big';
-    private $selected = [];
+    public $currentPhrase = 'dream big';
+    public $selected = [];
 
-    public function __construct($currentPhrase, $selected) {
+    public function __construct($phrase, $selected) {
         if (!empty($currentPhrase)) {
             $this->currentPhrase = $currentPhrase;
         }
