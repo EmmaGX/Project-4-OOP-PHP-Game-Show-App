@@ -5,7 +5,7 @@
     include 'inc/Game.php';
     include 'inc/Phrase.php';
 
-    $phrase = new Phrase();
+    $phrase = new Phrase($currentPhrase, $lives);
     $game = new Game();
     ?>
     <meta charset="utf-8">
@@ -20,6 +20,7 @@
 <?php
 var_dump($phrase);
 var_dump($game);
+
 ?>
 <div class="main-container">
     <div id="banner" class="section">
