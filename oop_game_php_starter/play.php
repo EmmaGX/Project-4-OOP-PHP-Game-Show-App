@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    include 'inc/Game.php';
+    include 'inc/Phrase.php';
+
+    $phrase = new Phrase();
+    $game = new Game();
+    ?>
     <meta charset="utf-8">
     <title>Phrase Hunter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +17,10 @@
 </head>
 
 <body>
+<?php
+var_dump($phrase);
+var_dump($game);
+?>
 <div class="main-container">
     <div id="banner" class="section">
         <h2 class="header">Phrase Hunter</h2>
