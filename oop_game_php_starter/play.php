@@ -5,7 +5,7 @@
     include 'inc/Game.php';
     include 'inc/Phrase.php';
 
-    $phrase = new Phrase($currentPhrase, $selected);
+    $phrase = new Phrase('Pecuda', []);
     $game = new Game($phrase);
     ?>
     <meta charset="utf-8">

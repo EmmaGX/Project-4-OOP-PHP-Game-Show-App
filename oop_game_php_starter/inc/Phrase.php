@@ -2,10 +2,9 @@
 
 class Phrase
 {
-    public $currentPhrase = 'dream big';
-    public $selected = [];
-
-    public function __construct($phrase, $selected) {
+    public $currentPhrase;
+    public $selected;
+    public function __construct($currentPhrase="dream big", $selected=[]) {
         if (!empty($currentPhrase)) {
             $this->currentPhrase = $currentPhrase;
         }
