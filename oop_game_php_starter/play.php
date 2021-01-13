@@ -23,6 +23,7 @@
         echo $phrase->addPhraseToDisplay('');
         echo '<br /><br /><br />';
         echo $game->displayKeyboard();
+
         var_dump ($_POST);
 
         ?>
