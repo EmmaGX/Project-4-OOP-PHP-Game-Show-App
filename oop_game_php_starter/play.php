@@ -12,7 +12,7 @@
 <body>
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
-    <form action="play.php">
+    <form method="post" action="play.php">
         <?php
         include 'inc/Game.php';
         include 'inc/Phrase.php';

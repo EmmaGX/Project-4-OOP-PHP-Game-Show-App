@@ -10,7 +10,7 @@ class Game
     }
 
     public function displayKeyboard() {
-        echo '<form method="post" action="play.php">';
+//        echo '<form method="post" action="play.php">';
             echo '<div id="qwerty" class="section">';
                 echo '<div class="keyrow">';
                     echo '<button class="key" type="submit" name="key" value="q">q</button>';
@@ -47,7 +47,7 @@ class Game
                     echo '<button class="key" type="submit" name="key" value="m">m</button>';
                 echo '</div>';
             echo '</div>';
-        echo '</form>';
+//        echo '</form>';
         return;
     }
 
