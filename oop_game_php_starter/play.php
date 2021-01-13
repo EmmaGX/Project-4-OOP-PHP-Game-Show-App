@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
-    include 'inc/Game.php';
-    include 'inc/Phrase.php';
-
-    $phrase = new Phrase('Pecuda', []);
-    $game = new Game($phrase);
-    ?>
     <meta charset="utf-8">
     <title>Phrase Hunter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,16 +10,26 @@
 </head>
 
 <body>
-<?php
-var_dump($phrase);
-var_dump($game);
-
-?>
 <div class="main-container">
-    <div id="banner" class="section">
-        <h2 class="header">Phrase Hunter</h2>
-    </div>
+    <h2 class="header">Phrase Hunter</h2>
+    <form action="play.php">
+        <?php
+        include 'inc/Game.php';
+        include 'inc/Phrase.php';
+
+        $phrase = new Phrase('dream big', []);
+        $game = new Game($phrase);
+
+        echo $phrase->addPhraseToDisplay('');
+        echo '<br /><br /><br />';
+        echo $game->displayKeyboard();
+        var_dump ($_POST);
+
+        ?>
+        <input id="btn__reset" type="submit" value="Start Game" />
+    </form>
 </div>
 
 </body>
 </html>
+
