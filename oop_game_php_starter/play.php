@@ -37,10 +37,10 @@ include 'inc/Phrase.php';
         echo $game->displayKeyboard();
         echo $game->displayScore();
 
-        var_dump ($_POST);
-        var_dump($_SESSION);
-        var_dump($game);
-        var_dump($phrase->checkLetter('d'));
+//        var_dump ($_POST);
+//        var_dump($_SESSION);
+//        var_dump($game);
+        var_dump($phrase->checkLetter('b'));
 
 
 
