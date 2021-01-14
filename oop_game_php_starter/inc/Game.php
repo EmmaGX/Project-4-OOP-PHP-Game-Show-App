@@ -49,4 +49,25 @@ class Game
     return;
     }
 
+    public function displayScore() {
+        for ($i = 1; $i <= $this->lives; $i++) {
+            echo '<div id="scoreboard" class="section">';
+                echo '<ol>';
+                    echo '<li class="tries">';
+                        echo '<img src="images/liveHeart.png"';
+                        echo 'height="35px" width="30px">';
+                        echo '<br /><br /><br />';
+                    echo '</li>';
+
+
+//                echo '<li class="tries">';
+//                    echo '<img src="images/loseHeart.png"';
+//                    echo 'height="35px" width="30px">';
+//                echo '</li>';
+            echo '</ol>';
+            echo '</div>';
+        }
+    }
+
+
 }

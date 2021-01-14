@@ -1,3 +1,9 @@
+<?php
+session_start();
+include 'inc/Game.php';
+include 'inc/Phrase.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +20,28 @@
     <h2 class="header">Phrase Hunter</h2>
     <form method="post" action="play.php">
         <?php
-        include 'inc/Game.php';
-        include 'inc/Phrase.php';
+        $_SESSION['selected'] = '';
+        $_SESSION['phrase'] = 'start small';
+
+
+        var_dump($_SESSION);
+
 
         $phrase = new Phrase('dream big', []);
         $game = new Game($phrase);
+        var_dump($game);
 
         echo $phrase->addPhraseToDisplay('');
         echo '<br /><br /><br />';
         echo $game->displayKeyboard();
+        echo $game->displayScore();
 
         var_dump ($_POST);
+
+
+
+
+
 
         ?>
         <input id="btn__reset" type="submit" value="Start Game" />

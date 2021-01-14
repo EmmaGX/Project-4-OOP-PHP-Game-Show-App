@@ -31,7 +31,6 @@ body {
 }
 
 li, ol, ul {
-  padding: 0;
   display: inline-block;
 }
 
@@ -81,9 +80,11 @@ input[type=submit].correct {
 }
 
 .section {
+  display: inline;
   width: 100%;
   padding: 10px;
 }
+
 
 #phrase ul li{
   margin-top: 15px;
