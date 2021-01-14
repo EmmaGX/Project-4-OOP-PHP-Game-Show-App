@@ -16,8 +16,7 @@ class Game
                 echo '<button class="key" type="submit" name="key" value="w">w</button>';
                 echo '<button class="key" type="submit" name="key" value="e">e</button>';
                 echo '<button class="key" type="submit" name="key" value="r">r</button>';
-                echo '<button class="key" style="background-color: red" 
-                    disabled>t</button>';
+                echo '<button class="key" type="submit" name="key" value="t">t</button>';
                 echo '<button class="key" type="submit" name="key" value="y">y</button>';
                 echo '<button class="key" type="submit" name="key" value="u">u</button>';
                 echo '<button class="key" type="submit" name="key" value="i">i</button>';
@@ -69,5 +68,20 @@ class Game
         }
     }
 
+    public function checkKeyPressed($letter) {
+        if ($_SESSION['selected'] != $this->phrase->checkLetter($letter)) {
+            return '<button class="key" type="submit" name="key" value=" '
+                . $letter .' ">' . $letter .'</button>';
+        } else {
+            if ($this->phrase->checkLetter($letter) == true) {
+                return '<button class="key correct" type="submit" name="key" style="background-color: green" value="' . $letter .'">' . $letter .'</button>';
+            } else {
+                return '<button class="key incorrect" type="submit" name="key" style="background-color: red" value="' . $letter .'">' . $letter .'</button>';
+            }
+        }
+    }
 
-}
+
+ }
+
+

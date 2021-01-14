@@ -24,12 +24,13 @@ include 'inc/Phrase.php';
         $_SESSION['phrase'] = 'start small';
 
 
-        var_dump($_SESSION);
+
+
 
 
         $phrase = new Phrase('dream big', []);
         $game = new Game($phrase);
-        var_dump($game);
+
 
         echo $phrase->addPhraseToDisplay('');
         echo '<br /><br /><br />';
@@ -37,6 +38,12 @@ include 'inc/Phrase.php';
         echo $game->displayScore();
 
         var_dump ($_POST);
+        var_dump($_SESSION);
+        var_dump($game);
+        var_dump($phrase->checkLetter('d'));
+
+
+
 
 
 
