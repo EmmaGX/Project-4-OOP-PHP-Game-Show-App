@@ -4,45 +4,64 @@ class Phrase
 {
     public $currentPhrase;
     public $selected = [];
-    public $array_unique = [];
+//    public $arrayUnique = [];
 
-    public function __construct($currentPhrase = "dream big", $selected = [])
+    public function __construct($currentPhrase = null, $selected = [])
     {
         if (!empty($currentPhrase)) {
-            $this->currentPhrase = $currentPhrase;
-            $this->array_unique = (str_split(str_replace(
+            $currentPhrase = array_unique(str_split(str_replace(
                 ' ',
                 '',
-                strtolower($this->currentPhrase)
+                strtolower( $this->currentPhrase)
             )));
         }
-        if (!empty($selected)) {
-            $this->selected = $selected;
-        }
+        //        if (!empty($selected)) {
+//            $this->selected = $selected;
+//        }
     }
-
+    //this method adds letter placeholders to the display when the game starts
     public function addPhraseToDisplay()
     {
-        $characters = str_split(strtolower($this->currentPhrase));
+        $characters = str_split(strtolower($_SESSION['$currentPhrase']));
 
         echo '<div id=phrase class=section>';
         echo '<ul>';
-
-        foreach($characters as $character){
-
-            if($character == " ") {
-                echo '<li class="hide space"> </li>';
+        foreach ($characters as $character) {
+            if ($character == ' ') {
+                echo '<li class="space">';
+                echo ' ';
+                echo '</li>';
             } else {
-                if (in_array($character, $this->selected)) {
-                    echo '<li class="show letter">'.$character.'</li>';
-                } else {
-                    echo '<li class="hide letter">'.$character.'</li>';
-
+                if (!empty($character)) {
+                        echo '<li class="hide letter">';
+                        echo $character;
+                        echo '</li>';
+                    } else {
+                        echo '<li class="hide">';
+                        echo $character;
+                        echo '</li>';
+                    }
                 }
             }
-        }
         echo '</ul>';
         echo '</div>';
+    }
+//        foreach ($characters as $character) {
+//
+//            if ($character == " ") {
+//                echo '<li class="hide space"> </li>';
+//            } else {
+//                if (in_array($character, $this->selected)) {
+//                    echo '<li class="show letter">' . $character . '</li>';
+////                } else {
+////                    echo '<li class="hide letter">' . $character . '</li>';
+////
+//                }
+//            }
+//        }
+
+//        echo '</ul>';
+//        echo '</div>';
 //        foreach($characters as $character){
 //            if ($character == ' ') {
 //                echo '<li class="hide space"> </li>';
@@ -60,14 +79,19 @@ class Phrase
 //            }
 //
 //        }
-    }
+//    }
+
+
 
     public function checkLetter($letter)
     {
+        $characters = str_split(strtolower($_SESSION['$currentPhrase']));
         $found = false;
-        foreach ($this->array_unique as $value) {
+
+        foreach ($characters as $value) {
             if ($value == $letter) {
-                $found = true;
+                var_dump($value);
+                return true;
             }
         }
         return $found;
