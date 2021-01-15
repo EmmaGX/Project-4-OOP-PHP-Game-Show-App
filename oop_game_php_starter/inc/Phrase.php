@@ -25,17 +25,41 @@ class Phrase
     {
         $characters = str_split(strtolower($this->currentPhrase));
 
-        foreach ($characters as $character) {
-            if (!empty($character)) {
-                echo '<li class="hide letter">';
-                echo $character;
-                echo '</li>';
+        echo '<div id=phrase class=section>';
+        echo '<ul>';
+
+        foreach($characters as $character){
+
+            if($character == " ") {
+                echo '<li class="hide space"> </li>';
             } else {
-                echo '<li class="hide space">';
-                echo $character;
-                echo '</li>';
+                if (in_array($character, $this->selected)) {
+                    echo '<li class="show letter">'.$character.'</li>';
+                } else {
+                    echo '<li class="hide letter">'.$character.'</li>';
+
+                }
             }
         }
+        echo '</ul>';
+        echo '</div>';
+//        foreach($characters as $character){
+//            if ($character == ' ') {
+//                echo '<li class="hide space"> </li>';
+//            } else {
+//                if (!empty($character)) {
+//                    if ($_SESSION['selected'] == $character && $character == $_POST['key'])
+//                        echo '<li class="hide letter">';
+//                    echo $character;
+//                    echo '</li>';
+//                } else {
+//                    echo '<li class="show letter">';
+//                    echo $character;
+//                    echo '</li>';
+//                }
+//            }
+//
+//        }
     }
 
     public function checkLetter($letter)

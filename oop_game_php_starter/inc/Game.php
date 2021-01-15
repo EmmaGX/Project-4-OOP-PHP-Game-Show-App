@@ -73,10 +73,10 @@ class Game
             return '<button class="key" type="submit" name="key" value=" '
                 . $letter .' ">' . $letter .'</button>';
         } else {
-            if ($this->phrase->checkLetter($letter) == true) {
-                return '<button class="key correct" type="submit" name="key" style="background-color: green" value="' . $letter .'">' . $letter .'</button>';
+            if ($this->phrase->checkLetter($letter)) {
+                return '<button class="key chosen" type="submit" name="key" value="' . $letter .'">' . $letter .'</button>';
             } else {
-                return '<button class="key incorrect" type="submit" name="key" style="background-color: red" value="' . $letter .'">' . $letter .'</button>';
+                return '<button class="key wrong" type="submit" name="key" value="' . $letter .'">' . $letter .'</button>';
             }
         }
     }
