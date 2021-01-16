@@ -11,6 +11,9 @@ $game = new Game($phrase);
 var_dump($phrase);
 var_dump($game);
 
+//tests that the form post is working
+var_dump ($_POST);
+
 
 
 //session_start();
@@ -39,7 +42,7 @@ var_dump($game);
 //$game = new Game($phrase);
 //        echo var_dump($phrase->array_unique);
 
-//                var_dump ($_POST);
+
 //                var_dump($_SESSION);
 //                var_dump($game);
 //        var_dump($_SESSION['selected']);
@@ -62,9 +65,11 @@ var_dump($game);
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
-        //tests to make sure addPhraseToDisplay is working
+        //Displays the current phrase and boxes
         echo $phrase->addPhraseToDisplay();
-//    echo $game->displayKeyboard();
+
+        // displays keyboard
+        echo $game->displayKeyboard();
 //    echo $game->displayScore();
 //    echo $phrase->checkLetter('');
 //    var_dump($phrase->checkLetter('r'));
