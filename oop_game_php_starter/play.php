@@ -70,7 +70,7 @@ var_dump ($_POST);
         //Displays the current phrase and boxes
         echo $phrase->addPhraseToDisplay();
 
-        // displays keyboardsssss
+        // displays keyboard
         echo $game->displayKeyboard();
 
         //displays score
