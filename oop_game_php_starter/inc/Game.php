@@ -10,7 +10,7 @@ class Game
 
     //sets the phrase property
     public function __construct(Phrase $phrase){
-
+        $this->phrase = $phrase;
     }
 }
 //class Game
