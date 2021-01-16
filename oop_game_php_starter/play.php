@@ -67,7 +67,7 @@ var_dump ($_POST);
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
-        //Displays the current phrase and boxessss
+        //Displays the current phrase and boxes
         echo $phrase->addPhraseToDisplay();
 
         // displays keyboard
