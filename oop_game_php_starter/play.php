@@ -11,6 +11,9 @@ $game = new Game($phrase);
 var_dump($phrase);
 var_dump($game);
 
+//tests to make sure addPhraseToDisplay is working
+echo $phrase->addPhraseToDisplay();
+
 //session_start();
 //session_destroy();
 //$_SESSION['selected'] = [];
