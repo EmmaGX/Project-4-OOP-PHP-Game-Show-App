@@ -9,7 +9,9 @@ $game = new Game($phrase);
 
 //test that there are actually instances of each class
 var_dump($phrase);
+echo '<br />';
 var_dump($game);
+echo '<br /><br />';
 
 //tests that the form post is working
 var_dump ($_POST);
@@ -70,7 +72,9 @@ var_dump ($_POST);
 
         // displays keyboard
         echo $game->displayKeyboard();
-//    echo $game->displayScore();
+
+        //displays score
+        echo $game->displayScore();
 //    echo $phrase->checkLetter('');
 //    var_dump($phrase->checkLetter('r'));
 
