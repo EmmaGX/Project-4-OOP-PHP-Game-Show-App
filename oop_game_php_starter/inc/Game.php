@@ -2,7 +2,11 @@
 //declares the Game Class
 class Game
 {
+    //Phrase object that will be set by the constructor
+    public $phrase;
 
+    //used to set how many wrong guesses a player has before the game is over
+    public $lives = 5;
 }
 //class Game
 //{
