@@ -2,10 +2,16 @@
 //declares the Phrase Class
 class Phrase
 {
+    //a string containing the current phrase to be used in the game
+    public $currentPhrase;
+
+    //An array of letters the user has guessed
+    public $selected = [];
+
 
 }
-//    public $currentPhrase;
-//    public $selected = [];
+
+
 //    public $arrayUnique;
 
 //    public function __construct($currentPhrase = null, $selected = [])
