@@ -7,6 +7,10 @@ include 'inc/Game.php';
 $phrase = new Phrase();
 $game = new Game();
 
+//test that there are actually instances of each class
+var_dump($phrase);
+var_dump($game);
+
 //session_start();
 //session_destroy();
 //$_SESSION['selected'] = [];
