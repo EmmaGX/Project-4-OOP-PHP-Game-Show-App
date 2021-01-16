@@ -7,6 +7,11 @@ class Game
 
     //used to set how many wrong guesses a player has before the game is over
     public $lives = 5;
+
+    //sets the phrase property
+    public function __construct(Phrase $phrase){
+
+    }
 }
 //class Game
 //{

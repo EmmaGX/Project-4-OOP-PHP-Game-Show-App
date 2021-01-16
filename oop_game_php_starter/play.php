@@ -5,7 +5,7 @@ include 'inc/Game.php';
 
 //instantiates the game and phrase classes
 $phrase = new Phrase();
-$game = new Game();
+$game = new Game($phrase);
 
 //test that there are actually instances of each class
 var_dump($phrase);
