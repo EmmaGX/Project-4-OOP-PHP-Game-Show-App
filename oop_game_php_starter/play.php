@@ -11,8 +11,7 @@ $game = new Game($phrase);
 var_dump($phrase);
 var_dump($game);
 
-//tests to make sure addPhraseToDisplay is working
-echo $phrase->addPhraseToDisplay();
+
 
 //session_start();
 //session_destroy();
@@ -63,7 +62,8 @@ echo $phrase->addPhraseToDisplay();
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
-//    echo $phrase->addPhraseToDisplay();
+        //tests to make sure addPhraseToDisplay is working
+        echo $phrase->addPhraseToDisplay();
 //    echo $game->displayKeyboard();
 //    echo $game->displayScore();
 //    echo $phrase->checkLetter('');
