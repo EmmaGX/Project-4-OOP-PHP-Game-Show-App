@@ -48,49 +48,7 @@ class Phrase
     }
 }
 
-//    public $arrayUnique;
 
-//    public function __construct($currentPhrase = null, $selected = [])
-//    {
-//        if (!empty($currentPhrase)) {
-//            $this->currentPhrase = $currentPhrase;
-//            $this->arrayUnique = array_unique(str_split(str_replace(
-//                ' ',
-//                '',
-//                strtolower( $this->currentPhrase)
-//            )));
-//        }
-        //        if (!empty($selected)) {
-//            $this->selected = $selected;
-//        }
-//    }
-    //this method adds letter placeholders to the display when the game starts
-//    public function addPhraseToDisplay()
-//    {
-//        $characters = str_split(strtolower($_SESSION['$currentPhrase']));
-//
-//        echo '<div id=phrase class=section>';
-//        echo '<ul>';
-//        foreach ($characters as $character) {
-//            if ($character == ' ') {
-//                echo '<li class="space">';
-//                echo ' ';
-//                echo '</li>';
-//            } else {
-//                if (!empty($character)) {
-//                        echo '<li class="letter">';
-//                        echo $character;
-//                        echo '</li>';
-//                    } else {
-//                        echo '<li class="hide">';
-//                        echo $character;
-//                        echo '</li>';
-//                    }
-//                }
-//            }
-//        echo '</ul>';
-//        echo '</div>';
-//    }
 //        foreach ($characters as $character) {
 //
 //            if ($character == " ") {
