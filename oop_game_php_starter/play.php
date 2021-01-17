@@ -19,44 +19,6 @@ echo '<br /><br />';
 var_dump($game);
 echo '<br /><br />';
 
-// Tests that the form post is working
-var_dump ($_POST);
-
-
-
-
-//session_destroy();
-//$_SESSION['selected'] = [];
-//$_SESSION['$currentPhrase'] = 'start small';
-
-//if (!isset($_SESSION['selected'])) {
-//    $_SESSION['selected'] = [];
-//}
-
-//if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//    if (isset($_POST['key'])) {
-//        array_push($_SESSION['selected'], $_POST['key']);
-//        $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
-//    }
-//}
-
-//if(!isset($_SESSION['phrase'])) {
-//    $phrase = new Phrase();
-//}
-
-//        $phrase = new Phrase('dream big', []);
-
-//$phrase = new Phrase();
-//$game = new Game($phrase);
-//        echo var_dump($phrase->array_unique);
-
-
-//                var_dump($_SESSION);
-//                var_dump($game);
-//        var_dump($_SESSION['selected']);
-//        var_dump(count($_SESSION['selected']));
-//        var_dump($phrase->checkLetter('s'));
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
