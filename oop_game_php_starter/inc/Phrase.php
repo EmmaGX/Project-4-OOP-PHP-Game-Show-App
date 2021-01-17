@@ -1,11 +1,11 @@
 <?php
-//declares the Phrase Class
+// Declares the Phrase Class
 class Phrase
 {
-    //a string containing the current phrase to be used in the game
+    // A string containing the current phrase to be used in the game
     public $currentPhrase = 'dream big';
 
-    //An array of letters the user has guessed
+    // An array of letters the user has guessed
     public $selected = [];
 
     public function __construct($currentPhrase = null, $selected = [])
@@ -18,10 +18,10 @@ class Phrase
         }
     }
 
-    //this method adds letter placeholders to display when the game starts
+    // This method adds letter placeholders to display when the game starts
     public function addPhraseToDisplay()
     {
-        //Split string into lowercase characters
+        // Split string into lowercase characters
         $characters = str_split(strtolower($this->currentPhrase));
 
         echo '<div id=phrase class=section>';

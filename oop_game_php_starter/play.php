@@ -1,19 +1,20 @@
 <?php
-//includes the 2 class files
+// Includes the 2 class files
 include 'inc/Phrase.php';
 include 'inc/Game.php';
 
-//instantiates the game and phrase classes
+// Instantiates the game and phrase classes
 $phrase = new Phrase();
 $game = new Game($phrase);
 
-//test that there are actually instances of each class
+// Test that there are actually instances of each class
+echo '<br /><br />';
 var_dump($phrase);
-echo '<br />';
+echo '<br /><br />';
 var_dump($game);
 echo '<br /><br />';
 
-//tests that the form post is working
+// Tests that the form post is working
 var_dump ($_POST);
 
 
@@ -67,13 +68,13 @@ var_dump ($_POST);
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
-        //Displays the current phrase and boxes
+        // Displays the current phrase and boxes
         echo $phrase->addPhraseToDisplay();
 
-        // displays keyboard
+        // Displays keyboard
         echo $game->displayKeyboard();
 
-        //displays score
+        // Displays score
         echo $game->displayScore();
 //    echo $phrase->checkLetter('');
 //    var_dump($phrase->checkLetter('r'));

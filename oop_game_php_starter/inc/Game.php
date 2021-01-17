@@ -1,19 +1,21 @@
 <?php
-//declares the Game Class
+// Declares the Game Class
 class Game
 {
-    //Phrase object that will be set by the constructor
+    // Phrase object that will be set by the constructor
     public $phrase;
 
-    //used to set how many wrong guesses a player has before the game is over
+    // Used to set how many wrong guesses a player has before the game is over
     public $lives = 5;
 
-    //sets the phrase property
-    public function __construct(Phrase $phrase){
+    // Sets the phrase property
+    public function __construct(Phrase $phrase)
+    {
         $this->phrase = $phrase;
     }
 
-    public function displayKeyboard() {
+    public function displayKeyboard()
+    {
         echo '<form method="post" action="play.php">';
             echo '<div id="qwerty" class="section">';
                 echo '<div class="keyrow">';
@@ -54,7 +56,8 @@ class Game
         return;
     }
 
-    public function displayScore() {
+    public function displayScore()
+    {
         echo '<div id="scoreboard" class="section">';
             echo '<ol>';
                 for ($i = 1; $i <= $this->lives; $i++) {
