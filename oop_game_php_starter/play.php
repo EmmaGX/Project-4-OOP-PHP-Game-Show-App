@@ -1,4 +1,9 @@
 <?php
+// Starts session
+session_start();
+// Checks to see if the session started
+var_dump($_SESSION);
+
 // Includes the 2 class files
 include 'inc/Phrase.php';
 include 'inc/Game.php';
@@ -19,7 +24,7 @@ var_dump ($_POST);
 
 
 
-//session_start();
+
 //session_destroy();
 //$_SESSION['selected'] = [];
 //$_SESSION['$currentPhrase'] = 'start small';
