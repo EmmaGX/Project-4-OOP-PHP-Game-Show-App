@@ -35,7 +35,7 @@ class Phrase
                 echo '</li>';
             } else {
                 if (!empty($character)) {
-                    echo '<li class="letter">';
+                    echo '<li class=" hide letter">';
                     echo $character;
                     echo '</li>';
                 } else {
@@ -66,44 +66,5 @@ class Phrase
 
 
 }
-
-
-//        foreach ($characters as $character) {
-//
-//            if ($character == " ") {
-//                echo '<li class="hide space"> </li>';
-//            } else {
-//                if (in_array($character, $this->selected)) {
-//                    echo '<li class="show letter">' . $character . '</li>';
-////                } else {
-////                    echo '<li class="hide letter">' . $character . '</li>';
-////
-//                }
-//            }
-//        }
-
-//        echo '</ul>';
-//        echo '</div>';
-//        foreach($characters as $character){
-//            if ($character == ' ') {
-//                echo '<li class="hide space"> </li>';
-//            } else {
-//                if (!empty($character)) {
-//                    if ($_SESSION['selected'] == $character && $character == $_POST['key'])
-//                        echo '<li class="hide letter">';
-//                    echo $character;
-//                    echo '</li>';
-//                } else {
-//                    echo '<li class="show letter">';
-//                    echo $character;
-//                    echo '</li>';
-//                }
-//            }
-//
-//        }
-//    }
-
-
-
 
 
