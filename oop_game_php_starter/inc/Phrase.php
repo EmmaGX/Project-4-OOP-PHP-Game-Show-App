@@ -3,15 +3,17 @@
 class Phrase
 {
     // A string containing the current phrase to be used in the game
-    public $currentPhrase = 'dream big';
+    public $currentPhrase;
 
     // An array of letters the user has guessed
     public $selected = [];
 
     public function __construct($currentPhrase = null, $selected = [])
     {
-        if (!empty($currentPhrase)) {
-            $this->currentPhrase = $currentPhrase;
+        if (empty($currentPhrase)) {
+            $this->currentPhrase = $_SESSION['phrase'];
+        } else {
+        $this->currentPhrase = $currentPhrase;
         }
         if (!empty($selected)) {
             $this->selected = $selected;
