@@ -48,6 +48,23 @@ class Phrase
         echo '</ul>';
         echo '</div>';
     }
+
+    // Checks a letter against the currentPhrase
+    public function checkLetter($letter)
+    {
+        $characters = str_split(strtolower($this->currentPhrase));
+        $found = false;
+
+        foreach ($characters as $value) {
+            if ($value == $letter) {
+                return true;
+            }
+        }
+        return $found;
+    }
+
+
+
 }
 
 
@@ -88,16 +105,5 @@ class Phrase
 
 
 
-//    public function checkLetter($letter)
-//    {
-//        $characters = str_split(strtolower($_SESSION['$currentPhrase']));
-//        $found = false;
-//
-//        foreach ($characters as $value) {
-//            if ($value == $letter) {
-//                return true;
-//            }
-//        }
-//        return $found;
-//    }
+
 

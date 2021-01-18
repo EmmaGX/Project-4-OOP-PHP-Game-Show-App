@@ -55,8 +55,10 @@ echo '<br /><br />';
 
         // Displays score
         echo $game->displayScore();
-//    echo $phrase->checkLetter('');
-//    var_dump($phrase->checkLetter('r'));
+        var_dump($phrase->checkLetter('l'));
+
+        // Tests checkLetter
+//    echo $phrase->checkLetter();
 
     ?>
 
