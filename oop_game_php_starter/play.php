@@ -1,6 +1,13 @@
 <?php
 // Starts session
 session_start();
+//When the START key is submitted it resets the Session Variables;
+if (isset($_POST['start'])) {
+
+    unset($_SESSION['selected']);
+    unset($_SESSION['phrase']);
+}
+
 echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';
 // Checks to see if the session started
 echo '<strong>This is the $_SESSION var dump:</strong><br />';
@@ -17,8 +24,7 @@ include 'inc/Game.php';
 //$_SESSION['selected'] = [];
 //Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-//    $_SESSION['selected'] = [];
-    if(isset($_POST["key"])){
+    if (isset($_POST["key"])){
         array_push($_SESSION['selected'], $_POST["key"]);
     }
 }
@@ -75,7 +81,6 @@ echo '<br /><br />';
         //var_dump($phrase->checkLetter('s'));
 
         //echo $game->updateKeyboard('s')
-
     ?>
 
 

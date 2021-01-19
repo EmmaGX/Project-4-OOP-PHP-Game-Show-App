@@ -52,6 +52,8 @@ class Game
                     echo $this->updateKeyboard("m");
                 echo '</div>';
             echo '</div>';
+        echo '<input id="btn__reset" type="submit" name="start" value="New Game" />';
+
         echo '</form>';
         return;
     }
