@@ -1,7 +1,7 @@
 <?php
 // Starts session
 session_start();
-echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';
+echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';
 // Checks to see if the session started
 echo '<strong>This is the $_SESSION var dump:</strong><br />';
 var_dump($_SESSION);
@@ -14,20 +14,27 @@ echo '<br /><br />';
 include 'inc/Phrase.php';
 include 'inc/Game.php';
 
+//$_SESSION['selected'] = [];
+//Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+//    $_SESSION['selected'] = [];
+    if(isset($_POST["key"])){
+        array_push($_SESSION['selected'], $_POST["key"]);
+    }
+}
+
+
 // If the key is pressed this adds it to the session selected array
 if(!isset($_SESSION['selected'])){
+    $_SESSION['selected'] = [];
     $phrase = new Phrase();
+    array_push($_SESSION['selected'], $_POST["key"]);
 //    $_SESSION['phrase'] = $phrase->currentPhrase;
 } else {
+//    if (isset($_SESSION['phrase']))
     $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
 }
 
-//Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if(isset($_POST["key"])){
-    array_push($_SESSION['selected'], $_POST["key"]);
-    }
-}
 
 // Instantiates the game class
 $game = new Game($phrase);

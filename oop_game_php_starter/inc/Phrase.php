@@ -22,8 +22,10 @@ class Phrase
     {
         if (empty($currentPhrase)) {
             $this->currentPhrase = $this->allPhrases[array_rand($this->allPhrases)];
+            $_SESSION['phrase'] = $this->currentPhrase;
         } else {
-        $this->currentPhrase = $currentPhrase;
+            $this->currentPhrase = $currentPhrase;
+            $_SESSION['phrase'] = $this->currentPhrase;
         }
         if (!empty($selected)) {
             $this->selected = $selected;
@@ -44,7 +46,7 @@ class Phrase
                         echo ' ';
                         echo '</li>';
                     } else if (in_array($character, $this->selected)) {
-                        echo '<li class="letter">';
+                        echo '<li class="letter show">';
                         echo $character;
                         echo '</li>';
                     } else {
