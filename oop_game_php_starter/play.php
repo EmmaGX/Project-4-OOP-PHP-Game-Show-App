@@ -8,7 +8,6 @@ var_dump($_SESSION);
 // Destroys current session
 //session_destroy();
 
-
 // Includes the 2 class files
 include 'inc/Phrase.php';
 include 'inc/Game.php';
@@ -16,6 +15,7 @@ include 'inc/Game.php';
 // If the key is pressed this adds it to the session selected array
 if(!isset($_SESSION['selected'])){
     $phrase = new Phrase();
+//    $_SESSION['phrase'] = $phrase->currentPhrase;
 } else {
     $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
 }
@@ -33,7 +33,7 @@ $game = new Game($phrase);
 // Test that there are actually instances of each class
 //var_dump($phrase);
 echo '<br /><br />';
-var_dump($game);
+//var_dump($game);
 echo '<br /><br />';
 
 ?>

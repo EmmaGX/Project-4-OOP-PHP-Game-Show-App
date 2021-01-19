@@ -12,9 +12,7 @@ class Phrase
         'i have a dream',
         'destiny is all',
         'there is no crying in baseball',
-        'we are on a mission from god',
-        'mi casa es su casa',
-        'family is a blessing'
+        'we are on a mission from god'
     ];
 
     // An array of letters the user has guessed
