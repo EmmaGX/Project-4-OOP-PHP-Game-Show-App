@@ -1,9 +1,11 @@
 <?php
 // Starts session
 session_start();
-echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';
+echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';
 // Checks to see if the session started
+echo '<strong>This is the $_SESSION var dump:</strong><br />';
 var_dump($_SESSION);
+echo '<br /><br />';
 
 // Destroys current session
 //session_destroy();
@@ -33,7 +35,8 @@ $game = new Game($phrase);
 // Test that there are actually instances of each class
 //var_dump($phrase);
 echo '<br /><br />';
-//var_dump($game);
+echo '<strong >This is the $game var dump:</strong><br />';
+var_dump($game);
 echo '<br /><br />';
 
 ?>
