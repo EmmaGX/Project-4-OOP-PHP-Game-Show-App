@@ -6,6 +6,7 @@ if (isset($_POST['start'])) {
 
     unset($_SESSION['selected']);
     unset($_SESSION['phrase']);
+    unset($_SESSION['total_misses']);
 }
 
 echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';

@@ -64,13 +64,18 @@ class Game
     {
         echo '<div id="scoreboard" class="section">';
             echo '<ol>';
+                $currentLives = $this->lives - $_SESSION['total_misses'];
+                var_dump($currentLives);
                 for ($i = 1; $i <= $this->lives; $i++) {
-//                    echo '<li class="tries">'
-//                        echo '<img src="images/loseHeart.png"';
-//                        echo 'height="35px" width="30px"></li>';
-                    echo '<li class="tries">';
+                    if ($i <= $currentLives) {
+                        echo '<li class="tries">';
                         echo '<img src="images/liveHeart.png"';
                         echo 'height="35px" width="30px"></li>';
+                    } else {
+                        echo '<li class="tries">';
+                        echo '<img src="images/lostHeart.png"';
+                        echo 'height="35px" width="30px"></li>';
+                    }
                 }
             echo '</ol>';
         echo '</div>';

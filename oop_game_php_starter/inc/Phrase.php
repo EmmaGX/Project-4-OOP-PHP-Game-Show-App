@@ -69,7 +69,10 @@ class Phrase
             if ($value == $letter) {
                 return true;
             }
-        }
+        } $wrongGuesses = array_diff($_SESSION['selected'], $characters);
+        var_dump($wrongGuesses);
+        $_SESSION['total_misses'] = (count($wrongGuesses) - 1);
+        var_dump($_SESSION['total_misses']);
         return $found;
     }
 
