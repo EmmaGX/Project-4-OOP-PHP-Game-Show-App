@@ -116,16 +116,16 @@ class Game
 
     public function updateKeyboard($letter)
     {
-//        if (!in_array($letter, $this->phrase->selected))  {
-//            return '<button class="key" type="submit" name="key" value=" '
-//                . $letter . ' ">' . $letter . '</button>';
-//        } else {
-            if ($this->phrase->checkLetter($letter) == true) {
-                return '<button class="key chosen" type="submit" name="key" value="' . $letter .'">' . $letter .'</button>';
+        if (!in_array($letter, $this->phrase->selected))  {
+            return '<button class="key" type="submit" name="key" value=" '
+                . $letter . '">' . $letter . '</button>';
+        } else {
+            if ($this->phrase->checkLetter($letter)) {
+                return '<button class="key chosen" type="submit" name="key" value="' . $letter .'" disabled>' . $letter .'</button>';
                 } else {
-                    return '<button class="key wrong" type="submit" name="key" value="' . $letter .'">' . $letter .'</button>';
+                    return '<button class="key wrong" type="submit" name="key" value="' . $letter .'"disabled>' . $letter .'</button>';
                 }
-//            }
+            }
     }
 
 

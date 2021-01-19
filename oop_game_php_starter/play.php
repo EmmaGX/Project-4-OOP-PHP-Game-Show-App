@@ -15,22 +15,19 @@ include 'inc/Game.php';
 
 // If the key is pressed this adds it to the session selected array
 if(!isset($_SESSION['selected'])){
-    $_SESSION['selected'] = array();
+    $phrase = new Phrase();
+} else {
+    $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
 }
 
 //Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(isset($_POST["key"])){
     array_push($_SESSION['selected'], $_POST["key"]);
-
     }
- }
+}
 
-//$phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
-
-
-// Instantiates the game and phrase classes
-$phrase = new Phrase('start small');
+// Instantiates the game class
 $game = new Game($phrase);
 
 // Test that there are actually instances of each class

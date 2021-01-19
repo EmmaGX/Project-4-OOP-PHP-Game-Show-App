@@ -5,13 +5,25 @@ class Phrase
     // A string containing the current phrase to be used in the game
     public $currentPhrase;
 
+    // An array of phrases
+    public $allPhrases =
+    [
+        'all you need is love',
+        'i have a dream',
+        'destiny is all',
+        'there is no crying in baseball',
+        'we are on a mission from god',
+        'mi casa es su casa',
+        'family is a blessing'
+    ];
+
     // An array of letters the user has guessed
     public $selected = [];
 
     public function __construct($currentPhrase = null, $selected = [])
     {
         if (empty($currentPhrase)) {
-            $this->currentPhrase = $_SESSION['phrase'];
+            $this->currentPhrase = $this->allPhrases[array_rand($this->allPhrases)];
         } else {
         $this->currentPhrase = $currentPhrase;
         }
@@ -27,25 +39,23 @@ class Phrase
         $characters = str_split(strtolower($this->currentPhrase));
 
         echo '<div id=phrase class=section>';
-        echo '<ul>';
-        foreach ($characters as $character) {
-            if ($character == ' ') {
-                echo '<li class="space">';
-                echo ' ';
-                echo '</li>';
-            } else {
-                if (!empty($character)) {
-                    echo '<li class=" hide letter">';
-                    echo $character;
-                    echo '</li>';
-                } else {
-                    echo '<li class="hide">';
-                    echo $character;
-                    echo '</li>';
+            echo '<ul>';
+                foreach ($characters as $character) {
+                    if ($character == ' ') {
+                        echo '<li class="space">';
+                        echo ' ';
+                        echo '</li>';
+                    } else if (in_array($character, $this->selected)) {
+                        echo '<li class="letter">';
+                        echo $character;
+                        echo '</li>';
+                    } else {
+                        echo '<li class="letter hide">';
+                        echo $character;
+                        echo '</li>';
+                    }
                 }
-            }
-        }
-        echo '</ul>';
+            echo '</ul>';
         echo '</div>';
     }
 
