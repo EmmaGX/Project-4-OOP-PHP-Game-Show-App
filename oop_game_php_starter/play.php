@@ -30,11 +30,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 if(!isset($_SESSION['selected'])){
     $_SESSION['selected'] = [];
     $phrase = new Phrase();
-    array_push($_SESSION['selected'], $_POST["key"]);
+    array_push($_SESSION['selected'], $_POST['key']);
 } else {
     $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
 }
-
 
 // Instantiates the game class
 $game = new Game($phrase);
@@ -58,7 +57,6 @@ $game = new Game($phrase);
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
-
     if (isset($_POST['key'])) {
         $ltr = $_POST['key'];
         if ($game->checkForLose('$ltr')) {
@@ -78,8 +76,6 @@ $game = new Game($phrase);
 
         // Tests checkLetter
         //var_dump($phrase->checkLetter('s'));
-
-        //echo $game->updateKeyboard('s')
     ?>
 
 
