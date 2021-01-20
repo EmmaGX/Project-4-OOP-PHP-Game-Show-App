@@ -1,55 +1,57 @@
 <?php
-//includes the 2 class files
+// Starts session
+session_start();
+//When the START key is submitted it resets the Session Variables;
+if (isset($_POST['start'])) {
+
+    unset($_SESSION['selected']);
+    unset($_SESSION['phrase']);
+    unset($_SESSION['total_misses']);
+}
+
+echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';
+// Checks to see if the session started
+echo '<strong>This is the $_SESSION var dump:</strong><br />';
+var_dump($_SESSION);
+echo '<br /><br />';
+
+// Destroys current session
+//session_destroy();
+
+// Includes the 2 class files
 include 'inc/Phrase.php';
 include 'inc/Game.php';
 
-//instantiates the game and phrase classes
-$phrase = new Phrase();
+//$_SESSION['selected'] = [];
+//Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if (isset($_POST["key"])){
+        array_push($_SESSION['selected'], $_POST["key"]);
+    }
+}
+
+
+// If the key is pressed this adds it to the session selected array
+if(!isset($_SESSION['selected'])){
+    $_SESSION['selected'] = [];
+    $phrase = new Phrase();
+    array_push($_SESSION['selected'], $_POST["key"]);
+//    $_SESSION['phrase'] = $phrase->currentPhrase;
+} else {
+//    if (isset($_SESSION['phrase']))
+    $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
+}
+
+
+// Instantiates the game class
 $game = new Game($phrase);
 
-//test that there are actually instances of each class
-var_dump($phrase);
-echo '<br />';
+// Test that there are actually instances of each class
+//var_dump($phrase);
+echo '<br /><br />';
+echo '<strong >This is the $game var dump:</strong><br />';
 var_dump($game);
 echo '<br /><br />';
-
-//tests that the form post is working
-var_dump ($_POST);
-
-
-
-//session_start();
-//session_destroy();
-//$_SESSION['selected'] = [];
-//$_SESSION['$currentPhrase'] = 'start small';
-
-//if (!isset($_SESSION['selected'])) {
-//    $_SESSION['selected'] = [];
-//}
-
-//if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//    if (isset($_POST['key'])) {
-//        array_push($_SESSION['selected'], $_POST['key']);
-//        $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
-//    }
-//}
-
-//if(!isset($_SESSION['phrase'])) {
-//    $phrase = new Phrase();
-//}
-
-//        $phrase = new Phrase('dream big', []);
-
-//$phrase = new Phrase();
-//$game = new Game($phrase);
-//        echo var_dump($phrase->array_unique);
-
-
-//                var_dump($_SESSION);
-//                var_dump($game);
-//        var_dump($_SESSION['selected']);
-//        var_dump(count($_SESSION['selected']));
-//        var_dump($phrase->checkLetter('s'));
 
 ?>
 <!DOCTYPE html>
@@ -67,17 +69,20 @@ var_dump ($_POST);
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
-        //Displays the current phrase and boxes
+
+        // Displays the current phrase and boxes
         echo $phrase->addPhraseToDisplay();
 
-        // displays keyboard
+        // Displays keyboard
         echo $game->displayKeyboard();
 
-        //displays score
+        // Displays score
         echo $game->displayScore();
-//    echo $phrase->checkLetter('');
-//    var_dump($phrase->checkLetter('r'));
 
+        // Tests checkLetter
+        //var_dump($phrase->checkLetter('s'));
+
+        //echo $game->updateKeyboard('s')
     ?>
 
 
