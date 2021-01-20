@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 if(!isset($_SESSION['selected'])){
     $_SESSION['selected'] = [];
     $phrase = new Phrase();
-    array_push($_SESSION['selected'], $_POST["key"]);
+    array_push($_SESSION['selected'], $_POST['key']);
 //    $_SESSION['phrase'] = $phrase->currentPhrase;
 } else {
 //    if (isset($_SESSION['phrase']))
@@ -69,7 +69,14 @@ echo '<br /><br />';
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
-
+    if (isset($_POST['key'])) {
+        $ltr = $_POST['key'];
+        if ($game->checkForLose('$ltr')) {
+            exit();
+        } elseif ($game->checkForWin()) {
+            exit();
+        }
+    }
         // Displays the current phrase and boxes
         echo $phrase->addPhraseToDisplay();
 

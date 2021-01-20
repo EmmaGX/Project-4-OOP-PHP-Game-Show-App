@@ -9,26 +9,27 @@ class Phrase
     public $allPhrases =
     [
         'all you need is love',
-        'i have a dream',
-        'destiny is all',
-        'there is no crying in baseball',
-        'we are on a mission from god',
-        'winter is coming',
-        'there is no place like home',
-        'a bird in the hand',
-        'a stitch in time',
-        'who let the dogs out',
-        'wag more bark less',
-        'you had me at hello',
-        'may the force be with you',
-        'i love the smell of napalm in the morning',
-        'soylent green is people',
-        'you can not handle the truth',
-        'i will have what she is having',
-        'who is on first',
-        'the force is strong in this one',
-        'they took the bar',
-        'make it so'
+        'i have a dream'
+//        'destiny is all',
+//        'there is no crying in baseball',
+//        'we are on a mission from god',
+//        'winter is coming',
+//        'there is no place like home',
+//        'a bird in the hand',
+//        'a stitch in time',
+//        'who let the dogs out',
+//        'wag more bark less',
+//        'you had me at hello',
+//        'may the force be with you',
+//        'i love the smell of napalm in the morning',
+//        'soylent green is people',
+//        'you can not handle the truth',
+//        'i will have what she is having',
+//        'who is on first',
+//        'the force is strong in this one',
+//        'they took the bar',
+//        'make it so',
+//        'the only to win is not to play'
     ];
 
     // An array of letters the user has guessed
