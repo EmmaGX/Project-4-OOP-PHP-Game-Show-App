@@ -9,11 +9,8 @@ if (isset($_POST['start'])) {
     unset($_SESSION['total_misses']);
 }
 
-echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';echo '<br /><br />';
 // Checks to see if the session started
-echo '<strong>This is the $_SESSION var dump:</strong><br />';
-var_dump($_SESSION);
-echo '<br /><br />';
+//var_dump($_SESSION);
 
 // Destroys current session
 //session_destroy();
@@ -30,29 +27,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-
 // If the key is pressed this adds it to the session selected array
 if(!isset($_SESSION['selected'])){
     $_SESSION['selected'] = [];
     $phrase = new Phrase();
     array_push($_SESSION['selected'], $_POST['key']);
-//    $_SESSION['phrase'] = $phrase->currentPhrase;
 } else {
-//    if (isset($_SESSION['phrase']))
     $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
 }
-
 
 // Instantiates the game class
 $game = new Game($phrase);
 
 // Test that there are actually instances of each class
 //var_dump($phrase);
-echo '<br /><br />';
-echo '<strong >This is the $game var dump:</strong><br />';
-var_dump($game);
-echo '<br /><br />';
-
+//var_dump($game);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,9 +61,9 @@ echo '<br /><br />';
     if (isset($_POST['key'])) {
         $ltr = $_POST['key'];
         if ($game->checkForLose('$ltr')) {
-            exit();
+            $game->gameOver();
         } elseif ($game->checkForWin()) {
-            exit();
+            $game->gameOver();
         }
     }
         // Displays the current phrase and boxes
@@ -88,8 +77,6 @@ echo '<br /><br />';
 
         // Tests checkLetter
         //var_dump($phrase->checkLetter('s'));
-
-        //echo $game->updateKeyboard('s')
     ?>
 
 
