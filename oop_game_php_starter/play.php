@@ -1,9 +1,9 @@
 <?php
 // Starts session
 session_start();
+
 //When the START key is submitted it resets the Session Variables;
 if (isset($_POST['start'])) {
-
     unset($_SESSION['selected']);
     unset($_SESSION['phrase']);
     unset($_SESSION['total_misses']);
@@ -21,8 +21,8 @@ include 'inc/Game.php';
 
 //Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if (isset($_POST["key"])){
-        array_push($_SESSION['selected'], $_POST["key"]);
+    if (isset($_POST['key'])){
+        array_push($_SESSION['selected'], $_POST['key']);
     }
 }
 
