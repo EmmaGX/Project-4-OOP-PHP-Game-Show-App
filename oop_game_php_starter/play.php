@@ -69,6 +69,7 @@ echo '<br /><br />';
 <div class="main-container">
     <h2 class="header">Phrase Hunter</h2>
     <?php
+
         // Displays the current phrase and boxes
         echo $phrase->addPhraseToDisplay();
 

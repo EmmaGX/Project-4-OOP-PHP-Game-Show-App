@@ -81,6 +81,8 @@ class Game
         echo '</div>';
     }
 
+//
+
     public function updateKeyboard($letter)
     {
         if (!in_array($letter, $this->phrase->selected))  {
