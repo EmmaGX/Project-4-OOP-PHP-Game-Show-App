@@ -152,6 +152,7 @@ input[type=submit].correct {
 }
 
 .btn__reset {
+  font-weight: bolder;
   padding: 16px;
   margin: 50px auto;
   background: #f7a964;
