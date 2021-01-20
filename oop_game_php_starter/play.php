@@ -77,9 +77,6 @@ $game = new Game($phrase);
         // Tests checkLetter
         //var_dump($phrase->checkLetter('s'));
     ?>
-
-
 </div>
-
 </body>
 </html>
