@@ -100,7 +100,7 @@ class Game
                 ucwords($_SESSION['phrase']) . '" ' . '<br /><br />Better luck next time!' . '</h1>';
             echo '<form method="post" action="play.php">';
 
-            echo '<input id="btn__reset" type="submit" name="start" value="Try Again, Loser?" />';
+            echo '<input class="incorrect btn__reset" id="btn__reset" type="submit" name="start" value="Try Again, Loser?" />';
 
             echo '</form>';
             return true;
@@ -127,7 +127,7 @@ class Game
                 '</h1>';
             echo '<form method="post" action="play.php">';
 
-            echo '<input id="btn__reset" type="submit" name="start" value="Feeling Lucky" />';
+            echo '<input class="correct" id="btn__reset" type="submit" name="start" value="Feeling Lucky?" />';
 
             echo '</form>';
             return true;
