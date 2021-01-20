@@ -28,7 +28,8 @@ class Phrase
         'who is on first',
         'the force is strong in this one',
         'they took the bar',
-        'make it so'
+        'make it so',
+        'the only to win is not to play'
     ];
 
     // An array of letters the user has guessed
