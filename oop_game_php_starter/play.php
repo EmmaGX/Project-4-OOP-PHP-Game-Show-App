@@ -19,20 +19,19 @@ if (isset($_POST['start'])) {
 include 'inc/Phrase.php';
 include 'inc/Game.php';
 
-//Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if (isset($_POST['key'])){
-        array_push($_SESSION['selected'], $_POST['key']);
-    }
-}
 
-// If the key is pressed this adds it to the session selected array
-if(!isset($_SESSION['selected'])){
+if (!isset($_SESSION['selected'])) {
+    // Initialize an empty session
     $_SESSION['selected'] = [];
     $phrase = new Phrase();
-    array_push($_SESSION['selected'], $_POST['key']);
 } else {
+    // Construct phrase from existing session
     $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
+}
+
+// If the user guesses a letter its saved to session array
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['key'])) {
+    array_push($_SESSION['selected'], $_POST['key']);
 }
 
 // Instantiates the game class
