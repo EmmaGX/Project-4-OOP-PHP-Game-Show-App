@@ -17,42 +17,42 @@ class Game
     public function displayKeyboard()
     {
         echo '<form method="post" action="play.php">';
-            echo '<div id="qwerty" class="section">';
-                echo '<div class="keyrow">';
-                    echo $this->updateKeyboard("q");
-                    echo $this->updateKeyboard("w");
-                    echo $this->updateKeyboard("e");
-                    echo $this->updateKeyboard("r");
-                    echo $this->updateKeyboard("t");
-                    echo $this->updateKeyboard("y");
-                    echo $this->updateKeyboard("u");
-                    echo $this->updateKeyboard("i");
-                    echo $this->updateKeyboard("o");
-                    echo $this->updateKeyboard("p");
-                echo '</div>';
+        echo '<div id="qwerty" class="section">';
+        echo '<div class="keyrow">';
+        echo $this->updateKeyboard("q");
+        echo $this->updateKeyboard("w");
+        echo $this->updateKeyboard("e");
+        echo $this->updateKeyboard("r");
+        echo $this->updateKeyboard("t");
+        echo $this->updateKeyboard("y");
+        echo $this->updateKeyboard("u");
+        echo $this->updateKeyboard("i");
+        echo $this->updateKeyboard("o");
+        echo $this->updateKeyboard("p");
+        echo '</div>';
 
-                echo '<div class="keyrow">';
-                    echo $this->updateKeyboard("a");
-                    echo $this->updateKeyboard("s");
-                    echo $this->updateKeyboard("d");
-                    echo $this->updateKeyboard("f");
-                    echo $this->updateKeyboard("g");
-                    echo $this->updateKeyboard("h");
-                    echo $this->updateKeyboard("j");
-                    echo $this->updateKeyboard("k");
-                    echo $this->updateKeyboard("l");
-                echo '</div>';
-                echo '<div class="keyrow">';
-                    echo $this->updateKeyboard("z");
-                    echo $this->updateKeyboard("x");
-                    echo $this->updateKeyboard("c");
-                    echo $this->updateKeyboard("v");
-                    echo $this->updateKeyboard("b");
-                    echo $this->updateKeyboard("n");
-                    echo $this->updateKeyboard("m");
-                    echo '</div>';
-                echo '</div>';
-            echo '<input id="btn__reset" type="submit" name="start" value="New Game" />';
+        echo '<div class="keyrow">';
+        echo $this->updateKeyboard("a");
+        echo $this->updateKeyboard("s");
+        echo $this->updateKeyboard("d");
+        echo $this->updateKeyboard("f");
+        echo $this->updateKeyboard("g");
+        echo $this->updateKeyboard("h");
+        echo $this->updateKeyboard("j");
+        echo $this->updateKeyboard("k");
+        echo $this->updateKeyboard("l");
+        echo '</div>';
+        echo '<div class="keyrow">';
+        echo $this->updateKeyboard("z");
+        echo $this->updateKeyboard("x");
+        echo $this->updateKeyboard("c");
+        echo $this->updateKeyboard("v");
+        echo $this->updateKeyboard("b");
+        echo $this->updateKeyboard("n");
+        echo $this->updateKeyboard("m");
+        echo '</div>';
+        echo '</div>';
+        echo '<input id="btn__reset" type="submit" name="start" value="New Game" />';
         echo '</form>';
         return;
     }
@@ -132,6 +132,7 @@ class Game
         exit();
     }
 }
+
 
 
 

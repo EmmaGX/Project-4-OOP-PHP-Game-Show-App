@@ -19,21 +19,21 @@ if (isset($_POST['start'])) {
 include 'inc/Phrase.php';
 include 'inc/Game.php';
 
-if (!isset($_SESSION['selected'])) {
-    // Initialize an empty session
+//Phrase object accepts SESSION variables for the `phrase` & `selected` letters.
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if (isset($_POST['key'])){
+        array_push($_SESSION['selected'], $_POST['key']);
+    }
+}
+
+// If the key is pressed this adds it to the session selected array
+if(!isset($_SESSION['selected'])){
     $_SESSION['selected'] = [];
-    $_SESSION['total_misses'] = 0;
-}
-
-// If the user guesses a letter its saved to session array
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['key'])) {
+    $phrase = new Phrase();
     array_push($_SESSION['selected'], $_POST['key']);
+} else {
+    $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
 }
-
-$phrase = new Phrase(
-    $_SESSION['phrase'] ?? null,
-    $_SESSION['selected']
-);
 
 // Instantiates the game class
 $game = new Game($phrase);
@@ -59,23 +59,23 @@ $game = new Game($phrase);
     <?php
     if (isset($_POST['key'])) {
         $ltr = $_POST['key'];
-        if ($game->checkForLose($ltr)) {
+        if ($game->checkForLose('$ltr')) {
             $game->gameOver();
         } elseif ($game->checkForWin()) {
             $game->gameOver();
         }
     }
-        // Displays the current phrase and boxes
-        echo $phrase->addPhraseToDisplay();
+    // Displays the current phrase and boxes
+    echo $phrase->addPhraseToDisplay();
 
-        // Displays keyboard
-        echo $game->displayKeyboard();
+    // Displays keyboard
+    echo $game->displayKeyboard();
 
-        // Displays score
-        echo $game->displayScore();
+    // Displays score
+    echo $game->displayScore();
 
-        // Tests checkLetter
-        //var_dump($phrase->checkLetter('s'));
+    // Tests checkLetter
+    //var_dump($phrase->checkLetter('s'));
     ?>
 </div>
 </body>
