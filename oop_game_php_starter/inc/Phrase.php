@@ -77,20 +77,17 @@ class Phrase
     }
 
     // Checks a letter against the currentPhrase
-    public function checkLetter($letter)
+    public function checkLetter($guessedLetter)
     {
         $characters = str_split(strtolower($this->currentPhrase));
-        $found = false;
 
-        foreach ($characters as $value) {
-            if ($value == $letter) {
+        foreach ($characters as $character) {
+            if ($character == $guessedLetter) {
                 return true;
             }
-        } $wrongGuesses = array_diff($_SESSION['selected'], $characters);
-//        var_dump($wrongGuesses);
-        $_SESSION['total_misses'] = (count($wrongGuesses) - 1);
-//        var_dump($_SESSION['total_misses']);
-        return $found;
+        }
+        $_SESSION['total_misses'] = $_SESSION['total_misses'] + 1;
+        return false;
     }
 }
 

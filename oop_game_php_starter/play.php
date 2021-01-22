@@ -22,6 +22,7 @@ include 'inc/Game.php';
 if (!isset($_SESSION['selected'])) {
     // Initialize an empty session
     $_SESSION['selected'] = [];
+    $_SESSION['total_misses'] = 0;
 }
 
 // If the user guesses a letter its saved to session array
@@ -58,7 +59,7 @@ $game = new Game($phrase);
     <?php
     if (isset($_POST['key'])) {
         $ltr = $_POST['key'];
-        if ($game->checkForLose('$ltr')) {
+        if ($game->checkForLose($ltr)) {
             $game->gameOver();
         } elseif ($game->checkForWin()) {
             $game->gameOver();
